@@ -1,0 +1,78 @@
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 20px auto;
+  }
+  .content {
+    gap: 30px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 15px;
+  }
+  .topbar {
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 900px) {
+  .photo-gallery {
+    max-width: 100%;
+  }
+  .additional-photos {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+  .additional-photos img {
+    flex: 0 0 auto;
+  }
+}
+
+
+/* Адаптивность */
+/*@media (max-width: 900px) {*/
+/*  .container {*/
+/*    grid-template-columns: 1fr;*/
+/*    gap: 30px;*/
+/*    margin: 20px auto;*/
+/*  }*/
+/*  .content {*/
+/*    gap: 30px;*/
+/*  }*/
+/*  footer {*/
+/*    flex-direction: column;*/
+/*    gap: 20px;*/
+/*    padding: 30px 15px;*/
+/*  }*/
+/*  .topbar {*/
+/*    justify-content: center;*/
+/*    gap: 20px;*/
+/*    padding: 10px 15px;*/
+/*    font-size: 0.85rem;*/
+/*  }*/
+/*}*/
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .photo-gallery, .description {
+    width: 100%;
+  }
+  .order-form.full-width {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .service-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Plaster Drywall Repair</title>
+    <link rel="icon" type="image/png" href="{% static 'webapp/img/cc_favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
+    <link rel="stylesheet" media="(max-width: 600px)" href="{% static 'webapp/css/mobile.css' %}"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+
+<div class="topbar-strip">
+  <a href="/some-link" class="strip-link">🚀 Upgrade Your Home with Confide Construction – See Our Latest Projects! 👇🏻</a>
+</div>
+<!-- Топ-бар с логотипом слева и контактами справа -->
+<header class="topbar">
+    <div class="logo-text">
+    Confide Construction
+    </div>
+    <div class="contacts">
+        <div class="contact-item">
+            <span class="icon">📧</span>
+            <a href="mailto:info@plasterrepair.com">info@plasterrepair.com</a>
+        </div>
+        <div class="contact-item">
+            <span class="icon">📞</span>
+            <a href="tel:+1234567890">+1 (234) 567-890</a>
+        </div>
+    </div>
+</header>
+
+<!-- Название услуги -->
+<h1 class="service-title">Plaster Drywall Repair</h1>
+
+<!-- Основной блок: фото слева, описание справа -->
+<main class="container">
+    <div class="photo-gallery">
+        <img src="{% static 'webapp/img/cc.jpeg' %}" alt="Main Repair Example" class="main-photo" id="mainPhoto"
+             style="cursor:pointer;"/>
+
+        <div class="additional-photos">
+            <img src="{% static 'webapp/img/cc_repair.jpeg' %}" alt="Repair Example 1" class="thumb"/>
+            <img src="{% static 'webapp/img/cc_drywall.jpeg' %}" alt="Repair Example 2" class="thumb"/>
+            <img src="{% static 'webapp/img/cc_rep_dry.jpeg' %}" alt="Repair Example 3" class="thumb"/>
+        </div>
+    </div>
+
+
+    <section class="description">
+        <h2>About Our Service</h2>
+        <p>
+            We offer fast and reliable plaster and drywall repair for your home or office.
+            Our experienced team guarantees high-quality results and a clean finish every time!
+        </p>
+    </section>
+</main>
+
+<!-- Форма заказа под фото и описанием на всю ширину -->
+<section class="order-form full-width">
+    <h2>Order Service</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required/>
+        <input type="email" name="email" placeholder="Email" required/>
+        <input type="tel" name="phone" placeholder="Phone" required/>
+        <textarea name="message" placeholder="Describe your problem" required></textarea>
+        <label>Attach a photo (optional):</label>
+        <input type="file" name="photo"/>
+        <button type="submit">Send Request</button>
+    </form>
+    {% if success %}
+        <p class="success">Your request has been sent!</p>
+    {% endif %}
+</section>
+
+<!-- Футер -->
+<footer>
+    <div class="contacts">
+        <h3>Contact Us</h3>
+        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p>Email: <a href="mailto:info@plasterrepair.com">info@plasterrepair.com</a></p>
+    </div>
+    <div class="about-company">
+        <h3>About Company</h3>
+        <p>
+            We have over 10 years of experience in plaster and drywall repair,
+            serving our local community with pride and care.</p>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="{% static 'webapp/js/main.js' %}"></script>
+
+</body>
+</html>
