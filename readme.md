@@ -40,7 +40,7 @@
 
 Если у вас есть вопросы или предложения, свяжитесь со мной:
 
-- Email: info@plasterrepair.com  
+- Email: tumasenkaaliaksandr@gmail.com  
 - GitHub: [TumashenkaAliaksandr](https://github.com/TumashenkaAliaksandr)
 
 ---
