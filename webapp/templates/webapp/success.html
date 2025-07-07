@@ -2,17 +2,11 @@
 {% load static %}
 
 {% block content %}
-    <section class="description">
-        <h2>About Our Service</h2>
-        <p>
-            We offer fast and reliable plaster and drywall repair for your home or office.
-            Our experienced team guarantees high-quality results and a clean finish every time!
-        </p>
-    </section>
-    <div class="container">
+<section class="section-content">
+    <div class="container success-message">
         <h1>Thank you!</h1>
         <p>Your request has been successfully sent. We will contact you shortly.</p>
-        <a href="{% url 'index' %}">Back to Home</a>
+        <a href="{% url 'index' %}" class="btn-back-home">Back to Home</a>
     </div>
-
+</section>
 {% endblock %}

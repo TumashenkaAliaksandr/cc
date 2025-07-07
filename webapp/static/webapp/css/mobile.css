@@ -120,3 +120,45 @@
     margin: 0 5px;
   }
 }
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 20px auto;
+  }
+  .content {
+    gap: 30px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 15px;
+  }
+  .topbar {
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 15px;
+    font-size: 0.85rem;
+  }
+  .contacts {
+    justify-content: center;
+  }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 480px) {
+    .container.success-message {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+
+    .container.success-message h1 {
+        font-size: 2rem;
+    }
+
+    .container.success-message p {
+        font-size: 1rem;
+    }
+}
