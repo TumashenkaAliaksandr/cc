@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" href="{% static 'webapp/img/cc_favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
     <link rel="stylesheet" media="(max-width: 600px)" href="{% static 'webapp/css/mobile.css' %}"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -40,16 +40,26 @@
 
 <!-- Основной блок: фото слева, описание справа -->
 <main class="container">
-    <div class="photo-gallery">
-        <img src="{% static 'webapp/img/cc.jpeg' %}" alt="Main Repair Example" class="main-photo" id="mainPhoto"
-             style="cursor:pointer;"/>
-
-        <div class="additional-photos">
-            <img src="{% static 'webapp/img/cc_repair.jpeg' %}" alt="Repair Example 1" class="thumb"/>
-            <img src="{% static 'webapp/img/cc_drywall.jpeg' %}" alt="Repair Example 2" class="thumb"/>
-            <img src="{% static 'webapp/img/cc_rep_dry.jpeg' %}" alt="Repair Example 3" class="thumb"/>
-        </div>
+{#    <div class="photo-gallery">#}
+{#        <img src="{% static 'webapp/img/cc.jpeg' %}" alt="Main Repair Example" class="main-photo" id="mainPhoto"/>#}
+{#        <div class="additional-photos">#}
+{#            <img src="{% static 'webapp/img/cc_repair.jpeg' %}" alt="Repair Example 1" class="thumb"/>#}
+{#            <img src="{% static 'webapp/img/cc_drywall.jpeg' %}" alt="Repair Example 2" class="thumb"/>#}
+{#            <img src="{% static 'webapp/img/cc_rep_dry.jpeg' %}" alt="Repair Example 3" class="thumb"/>#}
+{#        </div>#}
+{#    </div>#}
+  <div class="photo-gallery">
+    <!-- Ссылка только вокруг главного фото -->
+    <a href="{% static 'webapp/img/cc.jpeg' %}" id="mainPhotoLink" data-lightbox="gallery" data-title="Main Repair Example">
+        <img src="{% static 'webapp/img/cc.jpeg' %}" alt="Main Repair Example" class="main-photo" id="mainPhoto" />
+    </a>
+    <div class="additional-photos">
+        <!-- Убираем ссылки, оставляем только картинки -->
+        <img src="{% static 'webapp/img/cc_repair.jpeg' %}" alt="Repair Example 1" class="thumb" />
+        <img src="{% static 'webapp/img/cc_drywall.jpeg' %}" alt="Repair Example 2" class="thumb" />
+        <img src="{% static 'webapp/img/cc_rep_dry.jpeg' %}" alt="Repair Example 3" class="thumb" />
     </div>
+</div>
 
 
     <section class="description">
@@ -92,14 +102,14 @@
             We have over 10 years of experience in plaster and drywall repair,
             serving our local community with pride and care.</p>
     </div>
-    <div class="copyright" style="text-align:center; margin-top:100px; font-size:0.9rem; color:#888;">
+    <div class="copyright" style="text-align:center; margin-top:100px; font-size:0.9rem; color:#7c7c7c;">
         &copy; {{ current_year }} Confide Construction. All rights reserved.
     </div>
 </footer>
 <div class="footer-down">
-  <p>Design - PhoenixPegasus 2025 ®</a>
+  <p>Design - PhoenixPegasus 2025 ®</p>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
 <script src="{% static 'webapp/js/main.js' %}"></script>
 
 </body>
