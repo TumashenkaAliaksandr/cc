@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import EmailMessage
 from django.conf import settings
 
@@ -23,13 +23,22 @@ def index(request):
             email_subject,
             email_body,
             settings.DEFAULT_FROM_EMAIL,
-            [settings.DEFAULT_FROM_EMAIL],
+            ['Badminton500@inbox.lv'],  # сюда придёт письмо заменить на confide
             reply_to=[email]
         )
 
         if photo:
             mail.attach(photo.name, photo.read(), photo.content_type)
+
         mail.send()
-        success = True
+        # success = True
+        return redirect('success')
 
     return render(request, 'webapp/index.html', {'success': success})
+
+
+def company(request):
+    return render(request, 'webapp/about_company.html')
+
+def success(request):
+    return render(request, 'webapp/success.html')

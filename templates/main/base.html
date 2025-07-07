@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Plaster Drywall Repair</title>
+    <link rel="icon" type="image/png" href="{% static 'webapp/img/cc_favicon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
+    <link rel="stylesheet" media="(max-width: 600px)" href="{% static 'webapp/css/mobile.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+
+<div class="topbar-strip">
+  <a href="/some-link" class="strip-link">🚀 Upgrade Your Home with Confide Construction – See Our Latest Projects! 👇🏻</a>
+</div>
+<!-- Топ-бар с логотипом слева и контактами справа -->
+<header class="topbar">
+    <div class="logo-text">
+        <a href="{% url 'index' %}">Confide Construction</a>
+    </div>
+    <div class="contacts">
+        <div class="contact-item">
+            <span class="icon">👷🏻‍♂️</span>
+            <a href="{% url 'company' %}">About Company</a>
+        </div>
+        <div class="contact-item">
+            <span class="icon">📧</span>
+            <a href="mailto:info@plasterrepair.com">info@plasterrepair.com</a>
+        </div>
+        <div class="contact-item">
+            <span class="icon">📞</span>
+            <a href="tel:+1234567890">+1 (234) 567-890</a>
+        </div>
+    </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<!-- Форма заказа под фото и описанием на всю ширину -->
+{#<section class="order-form full-width">#}
+{#    <h2>Order Service</h2>#}
+{#    <form method="post" enctype="multipart/form-data">#}
+{#        {% csrf_token %}#}
+{#        <input type="text" name="name" placeholder="Your Name" required/>#}
+{#        <input type="email" name="email" placeholder="Email" required/>#}
+{#        <input type="tel" name="phone" placeholder="Phone" required/>#}
+{#        <textarea name="message" placeholder="Describe your problem" required></textarea>#}
+{#        <label>Attach a photo (optional):</label>#}
+{#        <input type="file" name="photo"/>#}
+{#        <button type="submit">Send Request</button>#}
+{#    </form>#}
+{#    {% if success %}#}
+{#        <p class="success">Your request has been sent!</p>#}
+{#    {% endif %}#}
+{#</section>#}
+
+<!-- Футер -->
+<footer>
+    <div class="contacts-footer">
+        <h3>Contact Us</h3>
+        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p>Email: <a href="mailto:info@plasterrepair.com">info@plasterrepair.com</a></p>
+    </div>
+    <div class="about-company">
+        <h3>About Company</h3>
+        <p>
+            We have over 10 years of experience in plaster and drywall repair,
+            serving our local community with pride and care.</p>
+    </div>
+    <div class="copyright" style="text-align:center; margin-top:100px; font-size:0.9rem; color:#7c7c7c;">
+        &copy; {{ current_year }} Confide Construction. All rights reserved.
+    </div>
+</footer>
+<div class="footer-down">
+  <p>Design - PhoenixPegasus 2025 ®</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+<script src="{% static 'webapp/js/main.js' %}"></script>
+<script src="{% static 'webapp/js/form.js' %}"></script>
+
+</body>
+</html>

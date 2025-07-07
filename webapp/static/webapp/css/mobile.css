@@ -76,3 +76,47 @@
     margin-bottom: 20px;
   }
 }
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 600px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image, .about-text {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .about-company {
+        margin: 20px 10px;
+    }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-image, .about-text {
+        max-width: 100%;
+        flex: none;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+  .breadcrumb-list {
+    font-size: 12px;
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    margin: 0 5px;
+  }
+}

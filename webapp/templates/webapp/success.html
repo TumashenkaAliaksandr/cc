@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="description">
+        <h2>About Our Service</h2>
+        <p>
+            We offer fast and reliable plaster and drywall repair for your home or office.
+            Our experienced team guarantees high-quality results and a clean finish every time!
+        </p>
+    </section>
+    <div class="container">
+        <h1>Thank you!</h1>
+        <p>Your request has been successfully sent. We will contact you shortly.</p>
+        <a href="{% url 'index' %}">Back to Home</a>
+    </div>
+
+{% endblock %}

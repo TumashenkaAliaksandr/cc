@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/" itemprop="item" class="breadcrumb-link">
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <span itemprop="name">About ConfideCo</span>
+      <meta itemprop="position" content="3" />
+    </li>
+  </ol>
+</nav>
+<h2 class="about-title">About ConfideCo</h2>
+
+<section class="about-company container-about">
+    <div class="about-content">
+        <div class="about-image">
+            <img src="{% static 'webapp/img/cc_assessment.jpg' %}" alt="ConfideCo Team" />
+        </div>
+        <div class="about-text">
+            <p>
+                ConfideCo is a trusted drywall, wallpaper, and handyman service provider serving the Washington DC area.
+                With years of experience in both minor and major repairs, we pride ourselves on delivering top-quality workmanship
+                using only reliable, up-to-date technologies and materials.
+            </p>
+            <p>
+                Whether you need drywall installation from scratch, patch repairs, or complete remodeling, our skilled team ensures
+                a clean, durable finish tailored to your needs. We understand that every project is unique, and we work closely
+                with our clients to provide personalized solutions that fit their budget and timeline.
+            </p>
+            <p>
+                Customer satisfaction is our priority. We are committed to professionalism, punctuality, and clear communication
+                throughout every step of your project.
+            </p>
+            <p>
+                Contact ConfideCo today to experience reliable service and expert craftsmanship for your home or office repairs.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

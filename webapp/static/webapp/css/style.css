@@ -37,7 +37,7 @@ body {
 
 .footer-down {
   height: 24px; /* высота полоски */
-  background: linear-gradient(229deg, #eaeaea, #fffcfc);
+  background: linear-gradient(229deg, #cacaca, #fffcfc);
   display: flex;               /* включаем flex */
   justify-content: center;     /* центр по горизонтали */
   align-items: center;         /* центр по вертикали */
@@ -49,6 +49,112 @@ body {
     text-decoration: none;
 }
 
+.hidden {
+    display: none;
+}
+.about-company {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 0 15px;
+}
+
+.about-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #8b7d6b;
+}
+
+/* Блок с фото и текстом — располагаем рядом */
+.about-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Фото слева */
+.about-image {
+    flex: 1 1 500px;
+    max-width: 500px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    object-fit: cover;
+    height: auto;
+    display: block;
+    margin-top: 25px;
+}
+
+/* Текст справа */
+.about-text {
+    flex: 2 1 450px;
+    min-width: 300px;
+}
+
+.about-text p {
+    margin-bottom: 1.3em;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+
+.breadcrumb-nav {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›"; /* разделитель */
+  margin: 0 8px;
+  color: #888;
+  font-weight: 600;
+}
+
+.breadcrumb-link {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+    margin-left: 15px;
+}
+
+.breadcrumb-link:hover,
+.breadcrumb-link:focus {
+  text-decoration: none;
+  color: #494646;
+}
+
+.breadcrumb-item.active {
+  color: #8b7d6b;
+  font-weight: 600;
+  cursor: default;
+}
+
+
+
+
 
 .logo-text {
   font-weight: 700;
@@ -56,6 +162,15 @@ body {
   color: #8b7d6b;
   user-select: none;
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.logo-text a{
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #8b7d6b;
+  user-select: none;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+    text-decoration: none;
 }
 
 
@@ -144,6 +259,14 @@ body {
   display: flex;
   gap: 40px;
   max-width: 1100px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
+
+.container-about {
+  display: flex;
+  gap: 40px;
+  max-width: 1350px;
   margin: 0 auto 40px auto;
   padding: 0 20px;
 }
