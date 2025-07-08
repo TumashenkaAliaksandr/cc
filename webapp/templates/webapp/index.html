@@ -5,30 +5,24 @@
 <!-- Название услуги -->
 <h1 class="service-title">Plaster Drywall Repair</h1>
 
-<!-- Основной блок: фото слева, описание справа -->
 <main class="container">
   <div class="photo-gallery">
-    <!-- Ссылка только вокруг главного фото -->
-    <a href="{% static 'webapp/img/cc.jpeg' %}" id="mainPhotoLink" data-lightbox="gallery" data-title="Main Repair Example">
-        <img src="{% static 'webapp/img/cc.jpeg' %}" alt="Main Repair Example" class="main-photo" id="mainPhoto" />
+    <a href="{{ service.main_photo.url }}" id="mainPhotoLink" data-lightbox="gallery" data-title="{{ service.title }}">
+        <img src="{{ service.main_photo.url }}" alt="{{ service.title }}" class="main-photo" id="mainPhoto" />
     </a>
     <div class="additional-photos">
-        <!-- Убираем ссылки, оставляем только картинки -->
-        <img src="{% static 'webapp/img/cc_repair.jpeg' %}" alt="Repair Example 1" class="thumb" />
-        <img src="{% static 'webapp/img/cc_drywall.jpeg' %}" alt="Repair Example 2" class="thumb" />
-        <img src="{% static 'webapp/img/cc_rep_dry.jpeg' %}" alt="Repair Example 3" class="thumb" />
+        {% for photo in service.additional_photos.all %}
+            <img src="{{ photo.photo.url }}" alt="{{ photo.alt_text }}" class="thumb" />
+        {% endfor %}
     </div>
-</div>
+  </div>
 
-
-    <section class="description">
-        <h2>About Our Service</h2>
-        <p>
-            We offer fast and reliable plaster and drywall repair for your home or office.
-            Our experienced team guarantees high-quality results and a clean finish every time!
-        </p>
-    </section>
+  <section class="description">
+      <h2>About Our Service</h2>
+      <p>{{ service.description }}</p>
+  </section>
 </main>
+
 
 <section class="order-form full-width">
     <h2 id="orderFormToggle" class="toggle-header" tabindex="0" role="button" aria-expanded="false"
