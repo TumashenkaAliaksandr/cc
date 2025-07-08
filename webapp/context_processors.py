@@ -1,6 +1,10 @@
+from .models import CompanyInfo
 from datetime import datetime
 
-def current_year(request):
+def company_info(request):
+    # Получаем единственную запись с данными компании
+    company = CompanyInfo.objects.first()
     return {
-        'current_year': datetime.now().year
+        'company': company,
+        'current_year': datetime.now().year,
     }
