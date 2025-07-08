@@ -43,7 +43,6 @@ body {
   align-items: center;         /* центр по вертикали */
   padding: 0 20px;
   font-size: 0.9rem;
-  font-family: 'Georgia', serif;
   color: #5a4d3c;
   user-select: none;
     text-decoration: none;
@@ -55,7 +54,6 @@ body {
 .about-company {
     max-width: 900px;
     margin: 0 auto;
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     padding: 0 15px;
@@ -218,8 +216,15 @@ body {
 
 .contact-item a:hover,
 .contact-item a:focus {
-  color: #a78a8a;             /* белый цвет при наведении */
+  color: #909aa3;             /* белый цвет при наведении */
   text-decoration: none;    /* подчёркивание не показывать */
+}
+
+.copyright {
+    text-align:center;
+    margin-top:117px;
+    font-size:0.9rem;
+    color:#7c7c7c;
 }
 
 
@@ -517,7 +522,6 @@ footer .contacts-footer, footer .about-company {
 
 footer h3 {
   margin-top: 0;
-  font-family: 'Georgia', serif;
   font-weight: 700;
   color: #5a4d3c;
 }
