@@ -54,7 +54,7 @@ body {
 }
 .about-company {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 0 auto;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
@@ -218,7 +218,7 @@ body {
 
 .contact-item a:hover,
 .contact-item a:focus {
-  color: white;             /* белый цвет при наведении */
+  color: #a78a8a;             /* белый цвет при наведении */
   text-decoration: none;    /* подчёркивание не показывать */
 }
 
@@ -427,7 +427,7 @@ h2 {
 
 .order-form button {
     background: linear-gradient(22deg, #fffdf7 0%, #c9c9c9 25%, #a2a2a2 50%, #f6f6f6 75%, #edecec 100%);
-    color: #fff;
+    color: #5a4d3c;
     border: none;
     padding: 14px 0;
     border-radius: 10px;
