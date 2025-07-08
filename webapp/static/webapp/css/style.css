@@ -259,6 +259,18 @@ body {
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
 }
 
+.service-title-p{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #8b7d6b;
+    margin: 40px auto 30px auto;
+    border-bottom: 2px solid #efe8dc;
+    padding-bottom: 10px;
+    max-width: 1100px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
 /* Основной контейнер: фото слева, описание справа */
 .container {
   display: flex;
