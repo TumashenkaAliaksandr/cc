@@ -255,7 +255,7 @@ body {
     margin: 40px auto 30px auto;
     border-bottom: 2px solid #efe8dc;
     padding-bottom: 10px;
-    max-width: 1100px;
+    max-width: 550px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
 }
 
@@ -355,6 +355,7 @@ body {
   padding: 30px 30px 40px 30px;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(150,130,100,0.15);
+    width: 88%;
 }
 
 

@@ -273,3 +273,93 @@ footer {
         padding: 8px 10px;
     }
 }
+
+@media only screen and (max-width: 667px) and (orientation: landscape) {
+
+    body, html {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    /* Контейнеры растягиваем на всю ширину */
+    .container,
+    .container-about,
+    .about-company,
+    .section-content,
+    .success-message {
+        max-width: 100vw !important;
+        width: 100vw !important;
+        margin: 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    /* Уменьшаем отступы у заголовков */
+    h1, h2, .service-title, .about-title {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    /* Подгоняем фото и галерею */
+    .main-photo, .about-image img {
+        max-width: 100vw !important;
+        height: auto !important;
+    }
+
+    /* Корректируем футер */
+    footer {
+        max-width: 100vw !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .footer-down {
+        height: 24px;
+        background: linear-gradient(229deg, #cacaca, #fffcfc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        font-size: 0.9rem;
+        color: #5a4d3c;
+        user-select: none;
+        text-decoration: none;
+        width: 100% !important;
+    }
+
+    .order-form.full-width {
+        max-width: 1100px;
+        margin: 0 auto 60px auto;
+        background: #fdfdfd;
+        padding: 30px 30px 40px 30px;
+        border-radius: 14px;
+        box-shadow: 0 6px 18px rgba(150, 130, 100, 0.15);
+        width: 90%!important;
+    }
+
+    .service-title-p {
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #8b7d6b;
+        margin: 40px auto 30px auto;
+        border-bottom: 2px solid #efe8dc;
+        padding-bottom: 10px;
+        max-width: 1100px;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+    }
+
+    .service-title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.6rem;
+        color: #8b7d6b;
+        margin: 40px auto 30px auto;
+        border-bottom: 2px solid #efe8dc;
+        padding-bottom: 10px;
+        max-width: 550px;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+    }
+}
+
+
