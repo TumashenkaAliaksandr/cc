@@ -27,7 +27,7 @@ def index(request):
             email_subject,
             email_body,
             settings.DEFAULT_FROM_EMAIL,
-            ['Badminton500@inbox.lv'],  # сюда придёт письмо заменить на confide
+            ['Badminton500@inbox.lv', 'sreda@gmail.com'],  # сюда придёт письмо заменить на confide
             reply_to=[email]
         )
 
