@@ -11,9 +11,18 @@
     <link rel="stylesheet" media="(max-width: 600px)" href="{% static 'webapp/css/mobile.css' %}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J476BTK9QM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-J476BTK9QM');
+    </script>
 </head>
 <body>
-
 
 <div class="topbar-strip">
   <a href="/#orderFormToggle" class="strip-link">🚀 Upgrade Your Home with Confide Construction – See Our Latest Projects! 👇🏻</a>
@@ -47,26 +56,7 @@
     </div>
 </header>
 
-
 {% block content %}{% endblock %}
-
-<!-- Форма заказа под фото и описанием на всю ширину -->
-{#<section class="order-form full-width">#}
-{#    <h2>Order Service</h2>#}
-{#    <form method="post" enctype="multipart/form-data">#}
-{#        {% csrf_token %}#}
-{#        <input type="text" name="name" placeholder="Your Name" required/>#}
-{#        <input type="email" name="email" placeholder="Email" required/>#}
-{#        <input type="tel" name="phone" placeholder="Phone" required/>#}
-{#        <textarea name="message" placeholder="Describe your problem" required></textarea>#}
-{#        <label>Attach a photo (optional):</label>#}
-{#        <input type="file" name="photo"/>#}
-{#        <button type="submit">Send Request</button>#}
-{#    </form>#}
-{#    {% if success %}#}
-{#        <p class="success">Your request has been sent!</p>#}
-{#    {% endif %}#}
-{#</section>#}
 
 <!-- Футер -->
 <footer>

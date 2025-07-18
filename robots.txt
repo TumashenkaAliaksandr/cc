@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://phoenixpegasus81.pythonanywhere.com/sitemap.xml

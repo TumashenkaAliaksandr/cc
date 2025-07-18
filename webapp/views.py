@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -46,3 +47,12 @@ def company(request):
 
 def success(request):
     return render(request, 'webapp/success.html')
+
+
+def robots_txt(request):
+    content = """User-agent: *
+Disallow:
+
+Sitemap: https://phoenixpegasus81.pythonanywhere.com/sitemap.xml
+"""
+    return HttpResponse(content, content_type="text/plain")
