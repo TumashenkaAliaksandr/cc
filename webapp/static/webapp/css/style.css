@@ -444,7 +444,7 @@ h2 {
 }
 
 .order-form button {
-    background: linear-gradient(22deg, #fffdf7 0%, #c9c9c9 25%, #a2a2a2 50%, #f6f6f6 75%, #edecec 100%);
+    background: linear-gradient(22deg, #f4e8c6 0%, #cbcbcb 25%, #d3d3d3 50%, #c5c5c5 75% 75%, #eeddba 100%);
     color: #5a4d3c;
     border: none;
     padding: 14px 0;
@@ -461,7 +461,7 @@ h2 {
 
 .order-form button:hover,
 .order-form button:focus {
-    background: linear-gradient(-10deg, #fffdf7 0%, #c9c9c9 25%, #a2a2a2 50%, #f6f6f6 75%, #edecec 100%);
+    background: linear-gradient(-10deg, #f4e8c6 0%, #cbcbcb 25%, #d3d3d3 50%, #c5c5c5 75% 75%, #eeddba 100%);
     box-shadow: 0 6px 20px rgba(179, 156, 106, 0.8);
     outline: none;
 }
@@ -510,7 +510,7 @@ h2 {
 
 /* Футер на всю ширину */
 footer {
-    background: linear-gradient(177deg, #fffafa 0%, #c9c9c9 25%, #ffffff 50%, #f6f6f6 75%, #ffffff 100%);
+    background: linear-gradient(74deg, #fffafa 0%, #efefef 25%, #ffffff 50%, #f6f6f6 75%, #ffffff 100%);
     color: #5a4d3c;
     padding: 40px 20px;
     display: flex;
