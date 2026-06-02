@@ -57,6 +57,13 @@ class MoreServices(models.Model):
         verbose_name="Иконка"
     )
 
+    like = models.CharField(
+        max_length=20,
+        default="🤍",
+        blank=True,
+        verbose_name="Иконка"
+    )
+
     short_description = models.TextField(
         verbose_name="Краткое описание"
     )

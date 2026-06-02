@@ -36,16 +36,16 @@ body {
 }
 
 .footer-down {
-  height: 24px; /* высота полоски */
+  height: 30px; /* высота полоски */
   background: linear-gradient(229deg, #cacaca, #fffcfc);
   display: flex;               /* включаем flex */
   justify-content: center;     /* центр по горизонтали */
-  align-items: center;         /* центр по вертикали */
   padding: 0 20px;
   font-size: 0.9rem;
   color: #5a4d3c;
   user-select: none;
     text-decoration: none;
+    align-items: baseline;
 }
 
 .hidden {
@@ -558,8 +558,8 @@ footer .contacts-footer, footer .about-company {
 
 footer h3 {
   margin-top: 0;
-  font-weight: 700;
-  color: #5a4d3c;
+  font-weight: 500;
+  color: #514435;
 }
 
 footer a {
