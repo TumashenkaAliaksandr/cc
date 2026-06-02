@@ -167,7 +167,7 @@ body {
   font-size: 1.8rem;
   color: #8b7d6b;
   user-select: none;
-  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1));
     text-decoration: none;
 }
 
@@ -247,27 +247,37 @@ body {
 }
 
 /* Название услуги */
+.service-title-main {
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #5d4f3e;
+    margin: 10px auto 10px auto;
+    max-width: 1450px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+/* Название услуги */
 .service-title {
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.8rem;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.7rem;
     color: #8b7d6b;
-    margin: 40px auto 30px auto;
-    border-bottom: 2px solid #efe8dc;
+    margin: 10px auto 10px auto;
     padding-bottom: 10px;
-    max-width: 550px;
+    max-width: 1450px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
 }
 
 .service-title-p{
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #8b7d6b;
-    margin: 40px auto 30px auto;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #5d4f3e;
+    margin: 10px auto 10px auto;
     border-bottom: 2px solid #efe8dc;
     padding-bottom: 10px;
-    max-width: 1100px;
+    max-width: 1450px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
 }
 

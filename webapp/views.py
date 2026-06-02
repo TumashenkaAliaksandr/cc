@@ -3,11 +3,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 from django.conf import settings
 
-from webapp.models import Service
+from webapp.models import Service, MoreServices
 
 
 def index(request):
     service = Service.objects.first()
+    more_services = MoreServices.objects.filter(
+        is_active=True
+    ).order_by('sort_order')
     success = False
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -39,7 +42,7 @@ def index(request):
         # success = True
         return redirect('success')
 
-    return render(request, 'webapp/index.html', {'success': success, 'service': service})
+    return render(request, 'webapp/index.html', {'success': success, 'service': service, 'more_services': more_services})
 
 
 def company(request):

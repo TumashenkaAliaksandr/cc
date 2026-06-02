@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class CompanyInfo(models.Model):
     name = models.CharField("Company Name", max_length=255)
@@ -29,3 +31,59 @@ class ServicePhoto(models.Model):
 
     def __str__(self):
         return f"Photo for {self.service.title}"
+
+
+class MoreServices(models.Model):
+    name = models.CharField(
+        max_length=255,
+        verbose_name="Название услуги"
+    )
+
+    slug = models.SlugField(
+        unique=True,
+        verbose_name="Slug"
+    )
+
+    image = models.ImageField(
+        upload_to="services/",
+        verbose_name="Изображение"
+    )
+
+    icon = models.CharField(
+        max_length=20,
+        default="🛒",
+        blank=True,
+        verbose_name="Иконка"
+    )
+
+    short_description = models.TextField(
+        verbose_name="Краткое описание"
+    )
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Активна"
+    )
+
+    sort_order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Сортировка"
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    class Meta:
+        ordering = ["sort_order", "name"]
+        verbose_name = "More Service"
+        verbose_name_plural = "More services"
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            "service_detail",
+            kwargs={"slug": self.slug}
+        )
