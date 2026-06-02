@@ -3,52 +3,88 @@
 
 {% block content %}
 
-{% include 'webapp/services-sliders.html' %}
+    <main class="container-fluid p-0">
+        <section class="hero-slider">
+            <div class="swiper service-hero-swiper">
+                <div class="swiper-wrapper">
+                    {% for slide in slider_services %}
+                        <div class="swiper-slide">
+                            <img src="{{ slide.main_photo.url }}"
+                                 alt="{{ slide.title }}"
+                                 class="hero-image">
 
-    <!-- Название услуги -->
-<h1 class="service-title">Plaster Drywall Repair</h1>
-<p class="service-title-p">We don’t just repair — we restore your home’s true face.</p>
+                            <div class="hero-overlay">
+                                <div class="hero-content">
+                                    <h1 class="hero-title">{{ slide.title }}</h1>
+                                    <p class="hero-description">{{ slide.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
 
-<main class="container">
-  <div class="photo-gallery">
-    <a href="{{ service.main_photo.url }}" id="mainPhotoLink" data-lightbox="gallery" data-title="{{ service.title }}">
-        <img src="{{ service.main_photo.url }}" alt="{{ service.title }}" class="main-photo" id="mainPhoto" />
-    </a>
-    <div class="additional-photos">
-        {% for photo in service.additional_photos.all %}
-            <img src="{{ photo.photo.url }}" alt="{{ photo.alt_text }}" class="thumb" />
-        {% endfor %}
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="container-fluid px-0">
+        <div class="category-chips-wrap">
+            <div class="category-chips">
+                <a href="#" class="category-chip active">Interior</a>
+                <a href="#" class="category-chip">Exterior</a>
+                <a href="#" class="category-chip">Lawn &amp; Garden</a>
+                <a href="#" class="category-chip">More Articles &amp; Advice</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <section class="description">
-      <h2>About Our Service</h2>
-      <p>{{ service.description }}</p>
-  </section>
-</main>
+    {% include 'webapp/services-sliders.html' %}
+
+    <main class="container">
+        <div class="photo-gallery">
+            <a href="{{ slider_service.main_photo.url }}" id="mainPhotoLink" data-lightbox="gallery"
+               data-title="{{ slider_service.title }}">
+                <img src="{{ slider_service.main_photo.url }}" alt="{{ slider_service.title }}" class="main-photo"
+                     id="mainPhoto"/>
+            </a>
+            <div class="additional-photos">
+                {% for photo in slider_service.additional_photos.all %}
+                    <img src="{{ photo.photo.url }}" alt="{{ photo.alt_text }}" class="thumb"/>
+                {% endfor %}
+            </div>
+        </div>
+
+        <section class="description">
+            <h2>About Our Service</h2>
+            <p>{{ slider_service.description }}</p>
+        </section>
+    </main>
 
 
-<section class="order-form full-width">
-    <h2 id="orderFormToggle" class="toggle-header" tabindex="0" role="button" aria-expanded="false"
-        aria-controls="orderFormContent" style="cursor: pointer;">
-        Click to order Service ▼
-    </h2>
-    <div id="orderFormContent" class="hidden">
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="text" name="name" placeholder="Your Name" required/>
-            <input type="email" name="email" placeholder="Email" required/>
-            <input type="tel" name="phone" placeholder="Phone" required/>
-            <textarea name="message" placeholder="Describe your problem" required></textarea>
-            <label>Attach a photo (optional):</label>
-            <input type="file" name="photo"/>
-            <button type="submit">Send Request</button>
-        </form>
-        {% if success %}
-            <p class="success">Your request has been sent!</p>
-        {% endif %}
-    </div>
-</section>
+    <section class="order-form full-width">
+        <h2 id="orderFormToggle" class="toggle-header" tabindex="0" role="button" aria-expanded="false"
+            aria-controls="orderFormContent" style="cursor: pointer;">
+            Click to order Service ▼
+        </h2>
+        <div id="orderFormContent" class="hidden">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required/>
+                <input type="email" name="email" placeholder="Email" required/>
+                <input type="tel" name="phone" placeholder="Phone" required/>
+                <textarea name="message" placeholder="Describe your problem" required></textarea>
+                <label>Attach a photo (optional):</label>
+                <input type="file" name="photo"/>
+                <button type="submit">Send Request</button>
+            </form>
+            {% if success %}
+                <p class="success">Your request has been sent!</p>
+            {% endif %}
+        </div>
+    </section>
 
 {% endblock %}
 <!-- Форма заказа под фото и описанием на всю ширину -->
@@ -68,4 +104,3 @@
 {#        <p class="success">Your request has been sent!</p>#}
 {#    {% endif %}#}
 {#</section>#}
-

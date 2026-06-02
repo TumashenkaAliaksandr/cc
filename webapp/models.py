@@ -6,6 +6,7 @@ class CompanyInfo(models.Model):
     name = models.CharField("Company Name", max_length=255)
     phone = models.CharField("Phone Number", max_length=50)
     email = models.EmailField("Email Address")
+    logo = models.ImageField("Logo", upload_to="logo", blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -15,7 +16,7 @@ class CompanyInfo(models.Model):
         verbose_name_plural = "Company Info"
 
 
-class Service(models.Model):
+class SliderService(models.Model):
     title = models.CharField("Service Title", max_length=255)
     description = models.TextField("Description")
     price = models.DecimalField("Price", max_digits=10, decimal_places=2, null=True, blank=True)
@@ -24,8 +25,8 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
-class ServicePhoto(models.Model):
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='additional_photos')
+class SliderServicePhoto(models.Model):
+    service = models.ForeignKey(SliderService, on_delete=models.CASCADE, related_name='additional_photos')
     photo = models.ImageField("Additional Photo", upload_to='services/additional_photos/')
     alt_text = models.CharField("Alt Text", max_length=255, blank=True)
 

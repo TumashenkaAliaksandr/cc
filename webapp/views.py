@@ -3,11 +3,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 from django.conf import settings
 
-from webapp.models import Service, MoreServices
+from webapp.models import MoreServices, SliderService
 
 
 def index(request):
-    service = Service.objects.first()
+    slider_services = SliderService.objects.all()
     more_services = MoreServices.objects.filter(
         is_active=True
     ).order_by('sort_order')
@@ -42,7 +42,7 @@ def index(request):
         # success = True
         return redirect('success')
 
-    return render(request, 'webapp/index.html', {'success': success, 'service': service, 'more_services': more_services})
+    return render(request, 'webapp/index.html', {'success': success, 'slider_services': slider_services, 'more_services': more_services})
 
 
 def company(request):

@@ -180,3 +180,58 @@
 .btn-pay svg {
     fill: #fff;
 }
+/*Main Sliders */
+.hero-slider {
+  width: 100%;
+}
+
+.hero-slider p{
+  font-size: 1.7rem;
+    line-height: 1.3;
+}
+
+.service-hero-swiper {
+  width: 100%;
+  height: 75vh;
+  min-height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-hero-swiper .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hero-content {
+  color: #fff;
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero-title {
+  margin: 0 0 16px;
+}
+
+.hero-description {
+  margin: 0;
+}

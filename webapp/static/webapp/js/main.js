@@ -142,3 +142,33 @@ document.addEventListener('DOMContentLoaded', () => {
         instance.show();
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const heroEl = document.querySelector('.service-hero-swiper');
+    if (!heroEl) return;
+
+    const heroSwiper = new Swiper(heroEl, {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        speed: 900,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        navigation: {
+            nextEl: heroEl.querySelector('.swiper-button-next'),
+            prevEl: heroEl.querySelector('.swiper-button-prev'),
+        },
+        pagination: {
+            el: heroEl.querySelector('.swiper-pagination'),
+            clickable: true,
+        },
+        grabCursor: true,
+        keyboard: {
+            enabled: true,
+        },
+    });
+});

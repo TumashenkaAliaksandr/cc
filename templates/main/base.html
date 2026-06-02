@@ -31,9 +31,19 @@
 <!-- Топ-бар с логотипом слева и контактами справа -->
 <header class="topbar">
     <div class="logo-text">
-        <a href="{% url 'index' %}">{{ company.name|default:"Confide Construction" }}</a>
+        <a href="{% url 'index' %}">
+            {% if company.logo and company.logo.url %}
+                <img src="{{ company.logo.url }}" alt="{{ company.name|default:'Confide Construction' }}">
+            {% else %}
+                {{ company.name|default:"Confide Construction" }}
+            {% endif %}
+        </a>
     </div>
     <div class="contacts">
+    <div class="contact-item">
+            <span class="icon">🛠️</span>
+            <a href="#services">Services</a>
+        </div>
         <div class="contact-item">
             <span class="icon">👷🏻‍♂️</span>
             <a href="{% url 'company' %}">About Company</a>

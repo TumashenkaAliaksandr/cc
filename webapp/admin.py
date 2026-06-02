@@ -1,19 +1,19 @@
 from django.contrib import admin
-from .models import CompanyInfo, ServicePhoto, Service, MoreServices
+from .models import CompanyInfo, MoreServices, SliderService, SliderServicePhoto
 
 
 @admin.register(CompanyInfo)
 class CompanyInfoAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'email')
+    list_display = ('name', 'phone', 'email', 'logo')
     search_fields = ('name', 'phone', 'email')
 
 
 class ServicePhotoInline(admin.TabularInline):
-    model = ServicePhoto
+    model = SliderServicePhoto
     extra = 3  # количество дополнительных фото по умолчанию
 
-@admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
+@admin.register(SliderService)
+class SliderServiceAdmin(admin.ModelAdmin):
     list_display = ('title', 'price')
     inlines = [ServicePhotoInline]
 

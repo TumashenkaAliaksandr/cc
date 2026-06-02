@@ -171,6 +171,19 @@ body {
     text-decoration: none;
 }
 
+/* если это логотип-картинка */
+.logo-text img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* hover эффект */
+.logo-text a:hover {
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
 
 /* Топ-бар с логотипом слева и контактами справа */
 .topbar {
@@ -178,7 +191,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(145deg, #fffcfc 0%, #ffffff 25%, #f0f0f0 50%, #f6f6f6 75%, #ffffff 100%);
-  padding: 12px 40px;
+  padding: 5px 40px;
   font-size: 0.9rem;
   color: #5a4d3c;
   box-shadow: 0 2px 7px -6px rgba(0,0,0,0.6);
@@ -251,7 +264,7 @@ body {
     text-align: left;
     font-weight: 500;
     font-size: 1.8rem;
-    color: #5d4f3e;
+    color: #514435;
     margin: 10px auto 10px auto;
     max-width: 1450px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
@@ -272,7 +285,7 @@ body {
 .service-title-p{
     text-align: left;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #5d4f3e;
     margin: 10px auto 10px auto;
     border-bottom: 2px solid #efe8dc;
@@ -616,5 +629,59 @@ footer a:hover {
     background: #097336;
     box-shadow: 0 6px 12px rgba(28, 89, 128, 0.5);
     outline: none;
+}
+
+a.btn.custom-pay-btn {
+    background-color: #dbdbdb !important;
+    border: none !important;
+}
+
+a.btn.custom-pay-btn:hover {
+    background-color: #e96d00 !important;
+}
+
+/*Category Chips*/
+.category-chips-wrap {
+  width: 100%;
+  padding: 14px 0;
+  background: #fff;
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.category-chips {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 16px;
+  scrollbar-width: none;
+}
+
+.category-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.category-chip {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.category-chip:hover {
+  background: #e6e6e6;
+}
+
+.category-chip.active {
+  background: #303030;
+  color: #fff;
 }
 
