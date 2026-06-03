@@ -28,8 +28,8 @@
 
 .service-icon {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    bottom: 13px;
+    right: 10px;
     width: 33px;
     height: 33px;
     display: flex;

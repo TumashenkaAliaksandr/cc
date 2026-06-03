@@ -16,6 +16,20 @@ body {
     height: 80px;
 }
 
+.cart-icon {
+    width: 22px;
+    height: 22px;
+    transition: 0.2s ease;
+
+    /* БАЗОВО: перевёрнута */
+    transform: scaleX(-1);
+}
+
+/* при hover возвращаем нормальное положение */
+.cart-link:hover .cart-icon {
+    transform: scaleX(1) scale(1.1);
+}
+
 .topbar {
     position: relative;
     z-index: 10000;

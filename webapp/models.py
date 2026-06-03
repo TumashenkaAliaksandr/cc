@@ -50,10 +50,10 @@ class MoreServices(models.Model):
         verbose_name="Изображение"
     )
 
-    icon = models.CharField(
-        max_length=20,
-        default="🛒",
+    icon = models.ImageField(
+        upload_to="services/icons/",
         blank=True,
+        null=True,
         verbose_name="Иконка"
     )
 
