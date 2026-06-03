@@ -10,23 +10,28 @@
     <link rel="stylesheet" href="{% static 'webapp/css/style.css' %}"/>
     <link rel="stylesheet" href="{% static 'webapp/css/sliders.css' %}"/>
     <link rel="stylesheet" media="(max-width: 600px)" href="{% static 'webapp/css/mobile.css' %}"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"/>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J476BTK9QM"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'G-J476BTK9QM');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-J476BTK9QM');
     </script>
 </head>
 <body>
 
 <div class="topbar-strip">
-  <a href="/#orderFormToggle" class="strip-link">🚀 Upgrade Your Home with Confide Construction – See Our Latest Projects! 👇🏻</a>
+    <a href="/#orderFormToggle" class="strip-link">🚀 Upgrade Your Home with Confide Construction – See Our Latest
+        Projects! 👇🏻</a>
 </div>
 <!-- Топ-бар с логотипом слева и контактами справа -->
 <header class="topbar">
@@ -40,7 +45,7 @@
         </a>
     </div>
     <div class="contacts">
-    <div class="contact-item">
+        <div class="contact-item">
             <span class="icon">🛠️</span>
             <a href="#services">Services</a>
         </div>
@@ -56,13 +61,24 @@
                 <a href="mailto:info@plasterrepair.com">info@plasterrepair.com</a>
             {% endif %}
         </div>
-        <div class="contact-item">
-            <span class="icon">📞</span>
-            {% if company.phone %}
-                <a href="tel:{{ company.phone|cut:' ' }}">{{ company.phone }}</a>
-            {% else %}
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
-            {% endif %}
+{#        <div class="contact-item">#}
+{#            <span class="icon">📞</span>#}
+{#            {% if company.phone %}#}
+{#                <a href="tel:{{ company.phone|cut:' ' }}">{{ company.phone }}</a>#}
+{#            {% else %}#}
+{#                <a href="tel:+1234567890">+1 (234) 567-890</a>#}
+{#            {% endif %}#}
+{#        </div>#}
+
+        <div class="contact-item auth-item auth-group">
+            <a href="#" class="pro-link">
+                <span class="pro-link-text">Join as a Pro</span>
+            </a>
+
+            <div class="auth-buttons">
+                <a href="{% url 'login' %}" class="auth-btn auth-btn-login">Log In</a>
+                <a href="{% url 'register' %}" class="auth-btn auth-btn-signup">Sign Up</a>
+            </div>
         </div>
     </div>
 </header>
@@ -101,7 +117,7 @@
     </div>
 </footer>
 <div class="footer-down">
-  <p>Design - PhoenixPegasus 2025 ®</p>
+    <p>Design - PhoenixPegasus 2025 ®</p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
 <script src="{% static 'webapp/js/main.js' %}"></script>

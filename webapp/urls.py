@@ -14,15 +14,15 @@ sitemaps = {
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('register/', views.register, name='register'),
+    path('login/', views.login_view, name='login'),
+    path("logout/", views.logout_view, name="logout"),
     path('company/', views.company, name='company'),
     path('success/', views.success, name='success'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', robots_txt, name='robots_txt'),
 
-
 ]
-
-
 
 # Добавляем маршруты для медиа-файлов в режиме отладки
 if settings.DEBUG:
