@@ -1085,6 +1085,15 @@ a.btn.custom-pay-btn:hover {
     transition: .3s;
 }
 
+.advertise {
+    position: relative;
+    top: 22px;
+}
+
+.advertise img {
+    border-radius: 4px;
+}
+
 .section-link:hover {
     color: #1d4ed8;
     transform: translateX(4px);
@@ -1095,7 +1104,25 @@ a.btn.custom-pay-btn:hover {
 }
 
 /* Grid */
+.popular-cities-section {
+    height: 400px;
+}
+.section-re {
+    display: grid;
+    gap: 16px;
+    width: auto;
+    position: relative;
+    bottom: 300px;
+    left: 55px;
+    padding: 13px;
+    border-radius: 4px;
+}
 
+.section-re img{
+    width: 220px;
+    height: 220px;
+    border-radius: 4px;
+}
 .cities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1136,7 +1163,7 @@ a.btn.custom-pay-btn:hover {
     align-items: center;
     gap: 10px;
 
-    padding: 14px 28px;
+    padding: 5px 25px;
 
     border: 2px solid #2563eb;
     border-radius: 50px;
