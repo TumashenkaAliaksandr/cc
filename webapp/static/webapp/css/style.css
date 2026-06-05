@@ -378,9 +378,8 @@ body {
     text-align: left;
     font-weight: 400;
     font-size: 0.9rem;
-    color: #938678;
     margin: 10px auto 10px auto;
-    border-bottom: 2px solid #efe8dc;
+    border-bottom: 1px solid #efe8dc;
     padding-bottom: 10px;
     max-width: 1450px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
@@ -1021,3 +1020,167 @@ a.btn.custom-pay-btn:hover {
     font-weight: 600;
 }
 /*end services chips*/
+
+/* =========================
+   POPULAR CITIES
+========================= */
+
+.popular-cities {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.popular-cities .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #2563eb;
+    margin-top: 10px;
+    border-radius: 50px;
+}
+
+.section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.section-link:hover {
+    color: #1d4ed8;
+    transform: translateX(4px);
+}
+
+.section-link span {
+    font-size: 20px;
+}
+
+/* Grid */
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.cities-grid a {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px 18px;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s ease;
+}
+
+.cities-grid a:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .15);
+}
+
+/*Additionals*/
+.additional-cities {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.additional-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+
+    border: 2px solid #2563eb;
+    border-radius: 50px;
+
+    background: #fff;
+    color: #2563eb;
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .3px;
+
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.additional-btn i {
+    font-size: 14px;
+    transition: transform .3s ease;
+}
+
+.additional-btn:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, .2);
+}
+
+.additional-btn:hover i {
+    transform: rotate(90deg);
+}
+
+.additional-btn:active {
+    transform: translateY(0);
+}
+
+.additional-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .15);
+}
+
+/* Footer */
+
+.cities-footer {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.more-cities-btn {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.more-cities-btn:hover {
+    color: #1d4ed8;
+    transform: scale(1.05);
+}
