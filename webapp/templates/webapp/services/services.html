@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="hero-search">
+        <div class="container">
+
+            <div class="hero-search-content">
+
+                <h1 class="hero-title">
+                    Find top-rated pros in your area
+                </h1>
+
+                <form action="{% url 'services' %}" method="get" class="search-form">
+
+                    <div class="search-field service-field">
+                        <i class="bi bi-search"></i>
+                        <input type="text"
+                               name="q"
+                               placeholder="What can we help you with?"
+                               value="{{ request.GET.q }}">
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="search-field zip-field">
+                        <i class="bi bi-geo-alt"></i>
+                        <input type="text"
+                               name="zip"
+                               placeholder="Zip Code"
+                               value="{{ request.GET.zip }}">
+                    </div>
+
+                    <button type="submit" class="search-btn">
+                        <i class="bi bi-search"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+        ```
+
+    </section>
+
+    <section class="services-section py-5">
+        <div class="container">
+
+            ```
+            {% if services %}
+
+                <div class="row g-4">
+
+                    {% for service in services %}
+
+                        <div class="col-lg-4 col-md-6">
+
+                            <div class="service-card">
+
+                                <div class="service-image">
+
+                                    {% if service.image %}
+                                        <img src="{{ service.image.url }}"
+                                             alt="{{ service.name }}">
+                                    {% else %}
+                                        <img src="{% static 'images/no-image.jpg' %}"
+                                             alt="{{ service.name }}">
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="service-content">
+
+                                    <h3>{{ service.name }}</h3>
+
+                                    {% if service.city %}
+                                        <div class="service-location">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            {{ service.city }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if service.description %}
+                                        <p>
+                                            {{ service.description|truncatechars:120 }}
+                                        </p>
+                                    {% endif %}
+
+                                    <a href="{{ service.get_absolute_url }}"
+                                       class="service-btn">
+                                        View Details
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-services">
+
+                    <i class="bi bi-search"></i>
+
+                    <h3>No services found</h3>
+
+                    <p>
+                        Try changing your search criteria.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+{% endblock %}

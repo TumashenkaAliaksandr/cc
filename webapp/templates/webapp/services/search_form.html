@@ -1,0 +1,40 @@
+<!-- Modal фильтр -->
+<div id="filterModal" class="filter-modal">
+    <div class="filter-modal-content">
+        <button id="closeFilterBtn" class="filter-close-btn">&times;</button>
+
+        <div class="filter-hero">
+            <h1>🔎︎ Find top-rated pros in your area</h1>
+
+            <div class="filter-search-container">
+                <label for="service-input">What can we help you with?</label>
+                <input
+                        id="service-input"
+                        type="text"
+                        placeholder="House Painting, Plumbing, ..."
+                        class="filter-search-input"
+                >
+
+                <div class="filter-zip-container">
+                    <label for="zip-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="location-icon"
+                             aria-label="location">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M12.6545 11.0434L8.00076 17.5591L3.3466 11.0437C0.642577 7.25828 3.34848 2 8.00046 2C12.6523 2 15.3582 7.25796 12.6545 11.0434ZM1.71917 12.2062C-1.93044 7.09707 1.72171 0 8.00046 0C14.279 0 17.9312 7.09665 14.282 12.2058L9.24007 19.265C8.63272 20.1153 7.36896 20.1154 6.76156 19.2651L1.71917 12.2062ZM7.99995 9C9.10452 9 9.99995 8.10457 9.99995 7C9.99995 5.89543 9.10452 5 7.99995 5C6.89538 5 5.99995 5.89543 5.99995 7C5.99995 8.10457 6.89538 9 7.99995 9Z"></path>
+                        </svg>
+                        Zip Code
+                    </label>
+                    <input
+                            id="zip-input"
+                            type="number"
+                            placeholder="12345"
+                            class="filter-zip-input">
+                    <button id="searchBtn" class="filter-search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Результаты (загружаются динамически) -->
+        <div id="filterResults" class="filter-results"></div>
+    </div>
+</div>

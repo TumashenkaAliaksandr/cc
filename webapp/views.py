@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import EmailMessage
 from django.conf import settings
@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+
 from webapp.models import MoreServices, SliderService
 
 
@@ -46,6 +48,23 @@ def index(request):
         return redirect('success')
 
     return render(request, 'webapp/index.html', {'success': success, 'slider_services': slider_services, 'more_services': more_services})
+
+
+
+
+
+@csrf_exempt
+def find_pros(request):
+    service = request.GET.get('service')
+    zip_code = request.GET.get('zip')
+
+    # Твоя логика поиска (Postgres query)
+    pros = [
+        {'name': 'John Painter', 'service': 'House Painting', 'zip': zip_code, 'rating': 4.8, 'reviews': 124},
+        {'name': 'Sarah Plumber', 'service': service, 'zip': zip_code, 'rating': 4.9, 'reviews': 89},
+    ]
+
+    return JsonResponse({'pros': pros})
 
 
 def register(request):

@@ -395,4 +395,84 @@ footer {
     }
 }
 
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .filter-modal-content {
+        padding: 35px 25px;
+        border-radius: 20px;
+        max-height: 90vh;
+    }
 
+    .filter-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .filter-search-container {
+        gap: 20px;
+    }
+
+    .filter-search-input,
+    .filter-zip-input {
+        padding: 14px 16px;
+        border-radius: 12px;
+    }
+
+    .filter-zip-container {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-search-btn {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .location-icon {
+        left: 16px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .zip-input-with-icon {
+        padding-left: 46px;
+    }
+
+    .filter-close-btn {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+    }
+
+    .filter-pros-card {
+        padding: 20px;
+    }
+
+    .contact-btn {
+        width: 100%;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .filter-modal-content {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .filter-hero h1,
+    .filter-search-container label {
+        color: #ffffff;
+    }
+
+    .filter-search-input,
+    .filter-zip-input,
+    .filter-pros-card {
+        background: #0f0f1a;
+        border-color: #2a2a4a;
+        color: #ffffff;
+    }
+
+    .filter-pros-card p {
+        color: #aaa;
+    }
+}

@@ -57,22 +57,10 @@
             <span class="icon">👷🏻‍♂️</span>
             <a href="{% url 'company' %}">About Company</a>
         </div>
-        {#        <div class="contact-item">#}
-        {#            <span class="icon">📧</span>#}
-        {#            {% if company.email %}#}
-        {#                <a href="mailto:{{ company.email }}">{{ company.email }}</a>#}
-        {#            {% else %}#}
-        {#                <a href="mailto:info@plasterrepair.com">info@plasterrepair.com</a>#}
-        {#            {% endif %}#}
-        {#        </div>#}
-        {#        <div class="contact-item">#}
-        {#            <span class="icon">📞</span>#}
-        {#            {% if company.phone %}#}
-        {#                <a href="tel:{{ company.phone|cut:' ' }}">{{ company.phone }}</a>#}
-        {#            {% else %}#}
-        {#                <a href="tel:+1234567890">+1 (234) 567-890</a>#}
-        {#            {% endif %}#}
-        {#        </div>#}
+
+        <button id="openFilterBtn" class="filter-open-btn">
+            🔎︎ Find Pros
+        </button>
 
         <div class="contact-item auth-item auth-group">
             {% if user.is_authenticated %}
@@ -156,5 +144,7 @@
 <script src="{% static 'webapp/js/main.js' %}"></script>
 <script src="{% static 'webapp/js/form.js' %}"></script>
 
+{% include 'webapp/services/search_form.html' %}
+<script src="{% static 'webapp/js/search_service.js' %}"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ body {
 }
 
 .my-wide-container {
-  max-width: 1400px!important;
+    max-width: 1400px !important;
 }
 
 
@@ -41,7 +41,7 @@ body {
 
 .topbar {
     position: relative;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .topbar-strip {
@@ -911,6 +911,7 @@ a.btn.custom-pay-btn:hover {
     background-color: #fff5f5;
     color: #bb2d3b !important;
 }
+
 /*services chips*/
 .service-chips-section {
     width: 100%;
@@ -1009,6 +1010,7 @@ a.btn.custom-pay-btn:hover {
     color: #444;
     font-weight: 600;
 }
+
 /*end services chips*/
 
 /* =========================
@@ -1089,6 +1091,7 @@ a.btn.custom-pay-btn:hover {
 .popular-cities-section {
     height: 400px;
 }
+
 .section-re {
     position: relative;
     bottom: 300px;
@@ -1098,13 +1101,14 @@ a.btn.custom-pay-btn:hover {
     width: 100%;
 }
 
-.section-re img{
+.section-re img {
     width: 220px;
     height: 220px;
     border-radius: 4px;
     position: relative;
     left: 60px;
 }
+
 .cities-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1210,4 +1214,278 @@ a.btn.custom-pay-btn:hover {
 .more-cities-btn:hover {
     color: #1d4ed8;
     transform: scale(1.05);
+}
+
+
+/*======================================
+   MODAL FILTER - Modern Styles
+======================================*/
+
+/* Кнопка открытия */
+.filter-open-btn {
+    padding: 7px 20px;
+    background: linear-gradient(135deg, #ff8d41 0%, #ff7a00 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255, 141, 65, 0.4);
+}
+
+/* Modal overlay */
+/* Modal overlay */
+.filter-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /* затемнение фона */
+    background: rgba(0, 0, 0, 0.55);
+
+    /* размытие */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    z-index: 1000;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal content */
+.filter-modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 50px 40px;
+    border-radius: 24px;
+
+    max-width: 650px;
+    width: 90%;
+
+    position: relative;
+
+    max-height: 85vh;
+    overflow-y: auto;
+
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+
+    transform: scale(0.9) translateY(30px);
+    transition: all 0.3s ease;
+}
+
+.filter-modal.active .filter-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Close button */
+.filter-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+    width: 45px;
+    height: 45px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.filter-close-btn:hover {
+    background: #ffe5e5;
+    color: #ff4444;
+    transform: rotate(90deg);
+}
+
+/* Hero секция */
+.filter-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter-hero h1 {
+    font-size: 2rem;
+    color: #0d2343;
+}
+
+.filter-hero p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Search container */
+.filter-search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.filter-search-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d2343;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Input fields */
+.filter-search-input,
+.filter-zip-input {
+    padding: 16px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 16px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.filter-search-input:focus,
+.filter-zip-input:focus {
+    outline: none;
+    border-color: #ff8d41;
+    box-shadow: 0 0 0 4px rgba(255, 141, 65, 0.1);
+    transform: translateY(-2px);
+}
+
+.filter-search-input::placeholder,
+.filter-zip-input::placeholder {
+    color: #999;
+}
+
+/* Zip container with icon */
+.filter-zip-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+}
+
+.input-with-icon {
+    position: relative;
+    display: block;
+}
+
+.location-icon {
+    position: absolute;
+    left: 140px;
+    width: 20px;
+    height: 20px;
+    fill: #ff8d41;
+    z-index: 1;
+}
+
+.zip-input-with-icon {
+    padding-left: 50px;
+}
+
+/* Search button */
+.filter-search-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff8d41 0%, #ff7a00 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 141, 65, 0.3);
+}
+
+.filter-search-btn:hover {
+    background: linear-gradient(135deg, #ff7a00 0%, #e96f00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255, 141, 65, 0.4);
+}
+
+.filter-search-btn:active {
+    transform: translateY(0);
+}
+
+/* Results section */
+.filter-results {
+    margin-top: 40px;
+}
+
+.filter-pros-card {
+    padding: 24px;
+    background: white;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-pros-card:hover {
+    border-color: #ff8d41;
+    box-shadow: 0 8px 24px rgba(255, 141, 65, 0.15);
+    transform: translateY(-2px);
+}
+
+.filter-pros-card h3 {
+    font-size: 1.2rem;
+    color: #0d2343;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.filter-pros-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.filter-pros-card .rating {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+/* Contact button */
+.contact-btn {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #198754 0%, #19a754 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
+}
+
+.contact-btn:hover {
+    background: linear-gradient(135deg, #19a754 0%, #148c46 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.4);
+}
+
+/* Loading state */
+.filter-results {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
 }
