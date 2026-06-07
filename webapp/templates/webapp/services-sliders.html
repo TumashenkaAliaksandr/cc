@@ -24,15 +24,12 @@
                             <img src="{{ service.image.url }}"
                                  class="card-img-top"
                                  alt="{{ service.name }}">
-                            <div class="service-like">
-                                {{ service.like }}
-                            </div>
 
                         </div>
 
                         <div class="card-body">
 
-                            <h6 class="fw-bold mb-2">
+                            <h6 class="fw-bold mb-2 text-colors">
                                 {{ service.name }}
                             </h6>
 
@@ -51,9 +48,12 @@
                                 </a>
 
                                 <div class="service-icon filter-open-trigger">
-                                    {% if service.icon %}
-                                        <img src="{{ service.icon.url }}" class="cart-icon" alt="icon">
-                                    {% endif %}
+                                    {#                                    {% if service.icon %}#}
+                                    {#                                        <img src="{{ service.icon.url }}" class="cart-icon" alt="icon">#}
+                                    {#                                    {% endif %}#}
+
+                                        {{ service.like }}
+
                                 </div>
 
                             </div>

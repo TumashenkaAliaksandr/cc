@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggle.addEventListener('click', () => {
         const isHidden = content.classList.toggle('hidden');
-        toggle.textContent = isHidden ? 'Click to order Service ▼' : 'Click to order Service ▲';
+        toggle.textContent = isHidden ? 'Click to order Service 🖂' : 'Click to order Service ▲';
         toggle.setAttribute('aria-expanded', !isHidden);
     });
 

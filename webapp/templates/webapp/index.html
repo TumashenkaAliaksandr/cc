@@ -47,35 +47,179 @@
 
     {% include 'webapp/city/city.html' %}
 
-    {% include 'webapp/services-sliders.html' %}
+    <div class="separator-40"></div>
 
-    <div class="separator-80"></div>
+    <section class="suggested-projects">
 
-    <main class="container">
-        <div class="photo-gallery">
-            <a href="{{ slider_service.main_photo.url }}" id="mainPhotoLink" data-lightbox="gallery"
-               data-title="{{ slider_service.title }}">
-                <img src="{{ slider_service.main_photo.url }}" alt="{{ slider_service.title }}" class="main-photo"
-                     id="mainPhoto"/>
-            </a>
-            <div class="additional-photos">
-                {% for photo in slider_service.additional_photos.all %}
-                    <img src="{{ photo.photo.url }}" alt="{{ photo.alt_text }}" class="thumb"/>
-                {% endfor %}
+        <div class="container">
+
+            <div class="projects-header">
+                <h2>🚀 Keep your home in perfect condition</h2>
+                <p>Find trusted professionals for your next home improvement project.</p>
             </div>
+
+            <div class="projects-overflow">
+
+                <div class="projects-cards">
+
+                    <!-- Card 1 -->
+                    <div class="project-card">
+
+                        <div class="project-content">
+
+                            <div class="project-info">
+
+                                <h3>Drywall Repair Services</h3>
+
+                                <div class="project-meta">
+
+                                    <div class="project-rating">
+                                        ⭐
+                                        <span>4.8</span>
+                                        <small>(12k+)</small>
+                                    </div>
+
+                                    <div class="project-separator">|</div>
+
+                                    <div class="project-price">
+                                        from $180
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="project-image">
+                                <img src="{% static 'webapp/img/cc_drywall.jpeg' %}"
+                                     alt="Drywall Repair">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="project-card">
+
+                        <div class="project-content">
+
+                            <div class="project-info">
+
+                                <h3>Interior Painting</h3>
+
+                                <div class="project-meta">
+
+                                    <div class="project-rating">
+                                        ⭐
+                                        <span>4.7</span>
+                                        <small>(9k+)</small>
+                                    </div>
+
+                                    <div class="project-separator">|</div>
+
+                                    <div class="project-price">
+                                        from $320
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="project-image">
+                                <img src="{% static 'webapp/img/painting_services.jpg' %}"
+                                     alt="Painting">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="project-card">
+
+                        <div class="project-content">
+
+                            <div class="project-info">
+
+                                <h3>Bathroom Remodeling</h3>
+
+                                <div class="project-meta">
+
+                                    <div class="project-rating">
+                                        ⭐
+                                        <span>4.9</span>
+                                        <small>(7k+)</small>
+                                    </div>
+
+                                    <div class="project-separator">|</div>
+
+                                    <div class="project-price">
+                                        from $2,500
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="project-image">
+                                <img src="{% static 'webapp/img/cc_badroom_re.jpg' %}"
+                                     alt="Bathroom Remodel">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="project-card">
+
+                        <div class="project-content">
+
+                            <div class="project-info">
+
+                                <h3>Roof Repair</h3>
+
+                                <div class="project-meta">
+
+                                    <div class="project-rating">
+                                        ⭐
+                                        <span>4.7</span>
+                                        <small>(8k+)</small>
+                                    </div>
+
+                                    <div class="project-separator">|</div>
+
+                                    <div class="project-price">
+                                        from $450
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="project-image">
+                                <img src="{% static 'webapp/img/professional-roofer.jpeg' %}"
+                                     alt="Roof Repair">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <section class="description">
-            <h2>About Our Service</h2>
-            <p>{{ slider_service.description }}</p>
-        </section>
-    </main>
+    </section>
 
+     {% include 'webapp/services-sliders.html' %}
 
     <section class="order-form full-width">
         <h2 id="orderFormToggle" class="toggle-header" tabindex="0" role="button" aria-expanded="false"
-            aria-controls="orderFormContent" style="cursor: pointer;">
-            Click to order Service ▼
+            aria-controls="orderFormContent" style="cursor: pointer; font-size: 1.5rem;">
+            Click to order Service 🖂
         </h2>
         <div id="orderFormContent" class="hidden">
             <form method="post" enctype="multipart/form-data">
@@ -95,20 +239,3 @@
     </section>
 
 {% endblock %}
-<!-- Форма заказа под фото и описанием на всю ширину -->
-{#<section class="order-form full-width">#}
-{#    <h2>Order Service</h2>#}
-{#    <form method="post" enctype="multipart/form-data">#}
-{#        {% csrf_token %}#}
-{#        <input type="text" name="name" placeholder="Your Name" required/>#}
-{#        <input type="email" name="email" placeholder="Email" required/>#}
-{#        <input type="tel" name="phone" placeholder="Phone" required/>#}
-{#        <textarea name="message" placeholder="Describe your problem" required></textarea>#}
-{#        <label>Attach a photo (optional):</label>#}
-{#        <input type="file" name="photo"/>#}
-{#        <button type="submit">Send Request</button>#}
-{#    </form>#}
-{#    {% if success %}#}
-{#        <p class="success">Your request has been sent!</p>#}
-{#    {% endif %}#}
-{#</section>#}
