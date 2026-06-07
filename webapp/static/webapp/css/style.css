@@ -1408,9 +1408,7 @@ a.btn.custom-pay-btn:hover {
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
-    cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(255, 141, 65, 0.3);
 }
 
 .filter-search-btn:hover {
