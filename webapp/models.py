@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class CompanyInfo(models.Model):
@@ -95,3 +96,84 @@ class MoreServices(models.Model):
             "service_detail",
             kwargs={"slug": self.slug}
         )
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    photo = models.ImageField(
+        upload_to='profiles/',
+        blank=True,
+        null=True
+    )
+
+    phone = models.CharField(max_length=30)
+    city = models.CharField(max_length=100, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class ProfessionalApplication(models.Model):
+    TYPE_CHOICES = (
+        ('individual', 'Individual'),
+        ('company', 'Company'),
+    )
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    application_type = models.CharField(
+        max_length=20,
+        choices=TYPE_CHOICES
+    )
+
+    company_name = models.CharField(
+        max_length=255,
+        blank=True
+    )
+
+    profession = models.CharField(
+        max_length=255,
+        blank=True
+    )
+
+    description = models.TextField()
+
+    service_area = models.CharField(
+        max_length=255
+    )
+
+    status = models.CharField(
+        max_length=20,
+        default='pending'
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+class Contractor(models.Model):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE
+    )
+
+    company_name = models.CharField(
+        max_length=255,
+        blank=True
+    )
+
+    profession = models.CharField(
+        max_length=255
+    )
+
+    description = models.TextField()
+
+    rating = models.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        default=5.0
+    )
+
+    approved = models.BooleanField(
+        default=False
+    )

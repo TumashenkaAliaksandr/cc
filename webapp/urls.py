@@ -18,6 +18,24 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('login/', views.login_view, name='login'),
     path("logout/", views.logout_view, name="logout"),
+
+    path(
+        'account/',
+        views.account,
+        name='account'
+    ),
+
+    path(
+        'account/edit/',
+        views.edit_profile,
+        name='edit_profile'
+    ),
+
+    path(
+        'account/professional/',
+        views.become_professional,
+        name='become_professional'
+    ),
     path('company/', views.company, name='company'),
     path('success/', views.success, name='success'),
     path('api/find-pros/', find_pros, name='find-pros'),

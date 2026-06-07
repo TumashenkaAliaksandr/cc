@@ -7,7 +7,18 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
+from .forms import (
+    ProfileForm,
+    ProfessionalApplicationForm
+)
+
+from .models import (
+    Profile,
+    ProfessionalApplication,
+    Contractor
+)
 from webapp.models import MoreServices, SliderService
 
 
@@ -98,6 +109,123 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("index")
+
+@login_required
+def account(request):
+
+    profile, created = Profile.objects.get_or_create(
+        user=request.user
+    )
+
+    application = ProfessionalApplication.objects.filter(
+        user=request.user
+    ).first()
+
+    contractor = Contractor.objects.filter(
+        user=request.user
+    ).first()
+
+    context = {
+        'profile': profile,
+        'application': application,
+        'contractor': contractor
+    }
+
+    return render(
+        request,
+        'webapp/account/account.html',
+        context
+    )
+
+@login_required
+def edit_profile(request):
+
+    profile, created = Profile.objects.get_or_create(
+        user=request.user
+    )
+
+    if request.method == 'POST':
+
+        form = ProfileForm(
+            request.POST,
+            request.FILES,
+            instance=profile
+        )
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.success(
+                request,
+                'Profile updated.'
+            )
+
+            return redirect('account')
+
+    else:
+
+        form = ProfileForm(
+            instance=profile
+        )
+
+    return render(
+        request,
+        'webapp/account/edit_profile.html',
+        {
+            'form': form
+        }
+    )
+
+@login_required
+def become_professional(request):
+
+    if ProfessionalApplication.objects.filter(
+            user=request.user
+    ).exists():
+
+        messages.info(
+            request,
+            'Application already submitted.'
+        )
+
+        return redirect('account')
+
+    if request.method == 'POST':
+
+        form = ProfessionalApplicationForm(
+            request.POST
+        )
+
+        if form.is_valid():
+
+            application = form.save(
+                commit=False
+            )
+
+            application.user = request.user
+
+            application.save()
+
+            messages.success(
+                request,
+                'Application submitted.'
+            )
+
+            return redirect('account')
+
+    else:
+
+        form = ProfessionalApplicationForm()
+
+    return render(
+        request,
+        'webapp/account/become_professional.html',
+        {
+            'form': form
+        }
+    )
+
 
 def company(request):
     return render(request, 'webapp/about_company.html')

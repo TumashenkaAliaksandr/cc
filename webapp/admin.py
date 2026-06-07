@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import CompanyInfo, MoreServices, SliderService, SliderServicePhoto
+from .models import CompanyInfo, MoreServices, SliderService, SliderServicePhoto, Contractor, ProfessionalApplication, \
+    Profile
 
 
 @admin.register(CompanyInfo)
@@ -42,4 +43,42 @@ class MoreServiceAdmin(admin.ModelAdmin):
     list_editable = (
         "is_active",
         "sort_order",
+    )
+
+
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'phone',
+        'city'
+    )
+
+
+@admin.register(ProfessionalApplication)
+class ProfessionalApplicationAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'application_type',
+        'company_name',
+        'profession',
+        'status',
+        'created_at'
+    )
+
+    list_filter = (
+        'status',
+        'application_type'
+    )
+
+
+@admin.register(Contractor)
+class ContractorAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'company_name',
+        'profession',
+        'rating',
+        'approved'
     )

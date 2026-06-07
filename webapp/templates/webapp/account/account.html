@@ -1,0 +1,97 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+    <div class="container py-5">
+
+        <div class="card shadow border-0">
+
+            <div class="card-body">
+
+                <div class="row">
+
+                    <div class="col-md-3 text-center">
+
+                        {% if profile.photo %}
+                            <img src="{{ profile.photo.url }}"
+                                 class="img-fluid rounded-circle"
+                                 width="180">
+                        {% endif %}
+
+                    </div>
+
+                    <div class="col-md-9">
+
+                        <h2>
+                            {{ request.user.username }}
+                        </h2>
+
+                        <p>
+                            {{ request.user.email }}
+                        </p>
+
+                        <p>
+                            {{ profile.phone }}
+                        </p>
+
+                        <p>
+                            {{ profile.city }}
+                        </p>
+
+                        <a href="{% url 'edit_profile' %}"
+                           class="btn btn-primary">
+                            Edit Profile
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="mt-4">
+
+            {% if not application %}
+
+                <div class="card border-0 shadow">
+
+                    <div class="card-body">
+
+                        <h3>
+                            Become a Professional
+                        </h3>
+
+                        <p>
+                            Join our network and get new clients.
+                        </p>
+
+                        <a href="{% url 'become_professional' %}"
+                           class="btn btn-success">
+                            Register as Professional
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <div class="alert alert-info">
+
+                    Application status:
+
+                    <strong>
+                        {{ application.status }}
+                    </strong>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+{% endblock %}
