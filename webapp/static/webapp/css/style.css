@@ -241,27 +241,9 @@ body {
     cursor: default;
 }
 
-
-.logo-text {
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #8b7d6b;
-    user-select: none;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
-}
-
-.logo-text a {
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #8b7d6b;
-    user-select: none;
-    filter: drop-shadow(0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1));
-    text-decoration: none;
-}
-
 /* если это логотип-картинка */
 .logo-text img {
-    height: 65px;
+    height: 70px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -391,14 +373,13 @@ body {
     border-bottom: 1px solid #efe8dc;
     padding-bottom: 10px;
     max-width: 1450px;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.1));
 }
 
 /* Основной контейнер: фото слева, описание справа */
 .container {
     display: flex;
-    gap: 40px;
-    max-width: 1100px;
+    gap: 20px;
     margin: 0 auto 40px auto;
     padding: 0 20px;
 }
@@ -947,7 +928,7 @@ a.btn.custom-pay-btn:hover {
     color: #2c2720;
     margin: 10px auto 10px auto;
     max-width: 1450px;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.1));
 }
 
 .service-chips-scroll {
@@ -1083,6 +1064,7 @@ a.btn.custom-pay-btn:hover {
     text-decoration: none;
     font-weight: 600;
     transition: .3s;
+    width: 250px;
 }
 
 .advertise {
@@ -1091,7 +1073,7 @@ a.btn.custom-pay-btn:hover {
 }
 
 .advertise img {
-    border-radius: 4px;
+    height: 190px;
 }
 
 .section-link:hover {
@@ -1108,20 +1090,20 @@ a.btn.custom-pay-btn:hover {
     height: 400px;
 }
 .section-re {
-    display: grid;
-    gap: 16px;
-    width: auto;
     position: relative;
     bottom: 300px;
-    left: 55px;
     padding: 13px;
     border-radius: 4px;
+    max-width: 245px;
+    width: 100%;
 }
 
 .section-re img{
     width: 220px;
     height: 220px;
     border-radius: 4px;
+    position: relative;
+    left: 60px;
 }
 .cities-grid {
     display: grid;
@@ -1156,6 +1138,10 @@ a.btn.custom-pay-btn:hover {
 .additional-cities {
     text-align: center;
     margin-top: 40px;
+}
+
+.additional-cities img {
+    text-align: center;
 }
 
 .additional-btn {
