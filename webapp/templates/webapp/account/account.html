@@ -1,8 +1,9 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+    <div class="separator-40"></div>
 
-    <div class="container py-5">
+    <div class="container">
 
         <div class="card shadow border-0">
 
@@ -10,21 +11,21 @@
 
                 <div class="row">
 
-                    <div class="col-md-3 text-center">
+                    <div class="account-avatar-page">
 
                         {% if profile.photo %}
                             <img src="{{ profile.photo.url }}"
-                                 class="img-fluid rounded-circle"
-                                 width="180">
+                                 class="img-fluid rounded-circle">
                         {% endif %}
 
                     </div>
-
                     <div class="col-md-9">
-
                         <h2>
                             {{ request.user.username }}
                         </h2>
+                    </div>
+
+                    <div class="col-md-9">
 
                         <p>
                             {{ request.user.email }}
