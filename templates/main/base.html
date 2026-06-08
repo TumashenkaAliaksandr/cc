@@ -34,7 +34,7 @@
 <body>
 
 <div class="topbar-strip">
-    <a href="/#orderFormToggle" class="strip-link">🚀 Upgrade Your Home with Confide Construction – See Our Latest
+    <a href="/#orderFormToggle" class="strip-link">🚀 Upgrade Your Home with HOMEFIX – See Our Latest
         Projects! 👇🏻</a>
 </div>
 <!-- Топ-бар с логотипом слева и контактами справа -->
@@ -42,25 +42,53 @@
     <div class="logo-text">
         <a href="{% url 'index' %}">
             {% if company.logo and company.logo.url %}
-                <img src="{{ company.logo.url }}" alt="{{ company.name|default:'Confide Construction' }}">
+                <img src="{{ company.logo.url }}" alt="{{ company.name|default:'HOMEFIX' }}">
             {% else %}
-                {{ company.name|default:"Confide Construction" }}
+                {{ company.name|default:"HOMEFIX" }}
             {% endif %}
         </a>
     </div>
     <div class="contacts">
-        {#        <div class="contact-item">#}
-        {#            <span class="icon">🛠️</span>#}
-        {#            <a href="#services">Services</a>#}
-        {#        </div>#}
-        {#        <div class="contact-item">#}
-        {#            <span class="icon">👷🏻‍♂️</span>#}
-        {#            <a href="{% url 'company' %}">About Company</a>#}
-        {#        </div>#}
 
         <button class="filter-open-trigger filter-open-btn">
             🔎︎ Find Pros
         </button>
+
+        <!-- Бургер меню кнопка -->
+        <button class="burger-menu-trigger" aria-label="Toggle menu">
+            <span class="burger-icon"></span>
+        </button>
+
+        <!-- Бургер меню -->
+        <nav class="burger-menu">
+            <div class="burger-menu-header">
+                <h3>Services</h3>
+            </div>
+            <ul class="burger-menu-list">
+                <li><a href="#" data-icon="🛠️">Handyman</a>
+                </li>
+                <li><a href="#"
+                       data-icon="🌿">Landscaping</a></li>
+                <li><a href="#" data-icon="🔧">Plumbing</a>
+                </li>
+                <li><a href="#"
+                       data-icon="⚡">Electrical</a></li>
+                <li><a href="#"
+                       data-icon="🏗️">Remodeling</a></li>
+                <li><a href="#" data-icon="🏠">Roofing</a>
+                </li>
+                <li><a href="#" data-icon="🎨">Painting</a>
+                </li>
+                <li><a href="#" data-icon="✨">Cleaning</a>
+                </li>
+                <li><a href="#" data-icon="🌡️">HVAC</a>
+                </li>
+                <li><a href="#" data-icon="🔲">Windows</a>
+                </li>
+                <li><a href="#" data-icon="🧱">Concrete</a>
+                </li>
+            </ul>
+        </nav>
 
         <div class="contact-item auth-item auth-group">
             {% if user.is_authenticated %}
@@ -72,8 +100,7 @@
 
                     <ul class="dropdown-menu account-menu" aria-labelledby="accountMenuButton">
                         <li><a class="dropdown-item" href="{% url 'account' %}">👤 My account</a></li>
-                        <li><a class="dropdown-item" href="#">❤️ Favorites</a></li>
-                        <li><a class="dropdown-item" href="{% url 'cart' %}">🛒 Cart</a></li>
+                        <li><a class="dropdown-item" href="{% url 'favorites' %}">❤️ Favorites</a></li>
                         <li><a class="dropdown-item" href="#">⚙️ Settings</a></li>
                         <li><a class="dropdown-item" href="#">❓ Help</a></li>
 

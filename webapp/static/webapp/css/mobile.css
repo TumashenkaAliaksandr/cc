@@ -490,6 +490,18 @@ footer {
         font-size: 18px;
     }
 
+        .burger-menu-trigger {
+        display: block;
+    }
+
+    .contacts {
+        position: relative;
+    }
+
+    .filter-open-btn {
+        display: none; /* скрываем кнопку Find Pros на мобильном */
+    }
+
 }
 
 /* Dark mode support */

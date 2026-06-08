@@ -172,3 +172,30 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 });
+
+
+// Бургер меню
+const burgerTrigger = document.querySelector('.burger-menu-trigger');
+const burgerMenu = document.querySelector('.burger-menu');
+
+burgerTrigger.addEventListener('click', () => {
+    burgerTrigger.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+});
+
+// Закрытие при клике вне меню
+document.addEventListener('click', (e) => {
+    if (!burgerMenu.contains(e.target) && !burgerTrigger.contains(e.target)) {
+        burgerTrigger.classList.remove('active');
+        burgerMenu.classList.remove('active');
+    }
+});
+
+// Закрытие при Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        burgerTrigger.classList.remove('active');
+        burgerMenu.classList.remove('active');
+    }
+});
+
