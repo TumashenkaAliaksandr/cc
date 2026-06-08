@@ -244,8 +244,8 @@ def success(request):
     return render(request, 'webapp/success.html')
 
 
-def cart_view(request):
-    return render(request, "webapp/cart.html")
+def favorites_view(request):
+    return render(request, "webapp/favorite.html")
 
 def robots_txt(request):
     content = """User-agent: *
