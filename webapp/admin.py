@@ -58,6 +58,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(ProfessionalApplication)
 class ProfessionalApplicationAdmin(admin.ModelAdmin):
+
     list_display = (
         'user',
         'application_type',
@@ -71,6 +72,51 @@ class ProfessionalApplicationAdmin(admin.ModelAdmin):
         'status',
         'application_type'
     )
+
+    def save_model(self, request, obj, form, change):
+
+        old_status = None
+
+        if obj.pk:
+            old_status = ProfessionalApplication.objects.get(
+                pk=obj.pk
+            ).status
+
+        super().save_model(
+            request,
+            obj,
+            form,
+            change
+        )
+
+        if (
+            old_status != 'approved'
+            and obj.status == 'approved'
+        ):
+
+            profile, created = Profile.objects.get_or_create(
+                user=obj.user
+            )
+
+            if obj.application_type == 'company':
+
+                profile.role = 'company'
+
+            else:
+
+                profile.role = 'worker'
+
+            profile.save()
+
+            Contractor.objects.update_or_create(
+                user=obj.user,
+                defaults={
+                    'company_name': obj.company_name,
+                    'profession': obj.profession,
+                    'description': obj.description,
+                    'approved': True,
+                }
+            )
 
 
 @admin.register(Contractor)

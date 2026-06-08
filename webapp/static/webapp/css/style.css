@@ -346,7 +346,9 @@ body {
 
 .copyright {
     text-align: center;
-    margin-top: 117px;
+    position: relative;
+    margin-top: 44px;
+    top: 70px;
     font-size: 0.9rem;
     color: #7c7c7c;
 }
@@ -656,13 +658,13 @@ footer {
     color: #5a4d3c;
     padding: 40px 20px;
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 100vw;
-    box-sizing: border-box;
-    border-radius: 0 0 14px 14px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    /*gap: 40px;*/
+    /*max-width: 100vw;*/
+    /*box-sizing: border-box;*/
+    /*border-radius: 0 0 14px 14px;*/
+    /*box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);*/
+    /*flex-wrap: wrap;*/
 }
 
 footer .contacts-footer, footer .about-company {

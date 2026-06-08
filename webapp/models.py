@@ -99,7 +99,20 @@ class MoreServices(models.Model):
 
 
 class Profile(models.Model):
+
+    ROLE_CHOICES = (
+        ('user', 'User'),
+        ('worker', 'Worker'),
+        ('company', 'Company'),
+    )
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    role = models.CharField(
+        max_length=20,
+        choices=ROLE_CHOICES,
+        default='user'
+    )
 
     photo = models.ImageField(
         upload_to='profiles/',
@@ -108,12 +121,24 @@ class Profile(models.Model):
     )
 
     phone = models.CharField(max_length=30)
-    city = models.CharField(max_length=100, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    city = models.CharField(
+        max_length=100,
+        blank=True
+    )
 
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
 
 class ProfessionalApplication(models.Model):
+
+    STATUS_CHOICES = (
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected'),
+    )
+
     TYPE_CHOICES = (
         ('individual', 'Individual'),
         ('company', 'Company'),
@@ -144,6 +169,7 @@ class ProfessionalApplication(models.Model):
 
     status = models.CharField(
         max_length=20,
+        choices=STATUS_CHOICES,
         default='pending'
     )
 

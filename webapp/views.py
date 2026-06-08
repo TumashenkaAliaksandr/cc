@@ -125,10 +125,20 @@ def account(request):
         user=request.user
     ).first()
 
+    # Если заявка уже одобрена и есть подрядчик,
+    # статус заявки больше не показываем
+    if (
+        application
+        and application.status == 'approved'
+        and contractor
+        and contractor.approved
+    ):
+        application = None
+
     context = {
         'profile': profile,
         'application': application,
-        'contractor': contractor
+        'contractor': contractor,
     }
 
     return render(
